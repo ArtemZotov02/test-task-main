@@ -25,6 +25,11 @@ const PokemonSelect: React.FC<PokemonSelectProps> = ({ control, name, pokemonLis
             maxMenuHeight={200}
             isClearable
             closeMenuOnSelect={false}
+            onChange={(selectedOptions) => {
+              if (selectedOptions.length <= 4) {
+                field.onChange(selectedOptions);
+              }
+            }}
           />
         )}
         rules={rules}
